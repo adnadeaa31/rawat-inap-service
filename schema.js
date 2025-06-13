@@ -86,7 +86,7 @@ const typeDefs = gql`
       id_kunjungan: Int,
       tanggal_masuk: Date,
       tanggal_keluar: Date,
-      nama_diagnosa: String,
+      detail_diagnosa: String,
       status: String,
       total_biaya: Float
     ): RawatInap
@@ -102,7 +102,7 @@ const typeDefs = gql`
       id_kunjungan: Int,
       tanggal_masuk: Date,
       tanggal_keluar: Date,
-      nama_diagnosa: String,
+      detail_diagnosa: String,
       status: String,
       total_biaya: Float
     ): RawatInap
