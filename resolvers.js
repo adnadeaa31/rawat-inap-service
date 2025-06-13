@@ -175,9 +175,9 @@ const resolvers = {
         fields.push(`id_rawat_inap = $${idx++}`);
         values.push(id_rawat_inap);
       }
-      if (nama_diagnosa !== undefined) {
-        fields.push(`nama_diagnosa = $${idx++}`);
-        values.push(nama_diagnosa);
+      if (detail_diagnosa !== undefined) {
+        fields.push(`detail_diagnosa = $${idx++}`);
+        values.push(detail_diagnosa);
       }
       if (kode_icd10 !== undefined) {
         fields.push(`kode_icd10 = $${idx++}`);
@@ -208,14 +208,14 @@ const resolvers = {
         id_kunjungan,
         tanggal_masuk,
         tanggal_keluar,
-        nama_diagnosa,
+        detail_diagnosa,
         status,
         total_biaya,
       } = args;
 
       const res = await db.query(
         `INSERT INTO rawat_inap
-          (id_pasien, id_kamar, id_nakes, id_diagnosa_inap, id_tindakan_inap, id_resep, id_kunjungan, tanggal_masuk, tanggal_keluar, nama_diagnosa, status, total_biaya)
+          (id_pasien, id_kamar, id_nakes, id_diagnosa_inap, id_tindakan_inap, id_resep, id_kunjungan, tanggal_masuk, tanggal_keluar, detail_diagnosa, status, total_biaya)
          VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12) RETURNING *`,
         [
           id_pasien,
@@ -227,7 +227,7 @@ const resolvers = {
           id_kunjungan,
           tanggal_masuk,
           tanggal_keluar,
-          nama_diagnosa,
+          detail_diagnosa,
           status,
           total_biaya,
         ]
@@ -247,7 +247,7 @@ const resolvers = {
         id_kunjungan,
         tanggal_masuk,
         tanggal_keluar,
-        nama_diagnosa,
+        detail_diagnosa,
         status,
         total_biaya,
       } = args;
@@ -292,9 +292,9 @@ const resolvers = {
         fields.push(`tanggal_keluar = $${idx++}`);
         values.push(tanggal_keluar);
       }
-      if (nama_diagnosa !== undefined) {
-        fields.push(`nama_diagnosa = $${idx++}`);
-        values.push(nama_diagnosa);
+      if (detail_diagnosa !== undefined) {
+        fields.push(`detail_diagnosa = $${idx++}`);
+        values.push(detail_diagnosa);
       }
       if (status !== undefined) {
         fields.push(`status = $${idx++}`);
