@@ -24,7 +24,7 @@ async function startServer() {
     bodyParserConfig: false, // ✅ hindari konflik parser
   });
 
-  const PORT = process.env.PORT || 4000;
+  const PORT = process.env.PORT || 8003;
   app.listen(PORT, () => {
     console.log(`🚀 GraphQL Server is running at http://localhost:${PORT}/graphql`);
   });

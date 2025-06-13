@@ -11,7 +11,7 @@ RUN npm install
 # Salin semua source code ke dalam image
 COPY . .
 
-# Ekspose port yang digunakan (default: 4000)
+# Ekspose port yang digunakan (default: 8003)
 EXPOSE 8003
 
 # Jalankan aplikasi
