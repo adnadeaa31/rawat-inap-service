@@ -20,6 +20,7 @@ const typeDefs = gql`
   type DiagnosaInap {
     id_diagnosa_inap: ID!
     id_rawat_inap: Int
+    id_kunjungan: Int
     nama_diagnosa: String
     kode_icd10: String
   }
@@ -35,7 +36,7 @@ const typeDefs = gql`
     id_kunjungan: Int
     tanggal_masuk: Date
     tanggal_keluar: Date
-    nama_diagnosa: String
+    detail_diagnosa: String
     status: String
     total_biaya: Float
 
@@ -52,7 +53,7 @@ const typeDefs = gql`
     kamar(id: ID!): Kamar
 
     semuaDiagnosaInap: [DiagnosaInap]
-    diagnosaInap(id: ID!): DiagnosaInap
+    diagnosaInap(id_kunjungan: Int!): DiagnosaInap
 
     semuaTindakanInap: [TindakanInap]
     tindakanInap(id: ID!): TindakanInap

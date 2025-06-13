@@ -43,8 +43,8 @@ const resolvers = {
       const res = await db.query('SELECT * FROM diagnosa_inap');
       return res.rows;
     },
-    diagnosaInap: async (_, { id }) => {
-      const res = await db.query('SELECT * FROM diagnosa_inap WHERE id_diagnosa_inap = $1', [id]);
+    diagnosaInap: async (_, { id_kunjungan }) => {
+      const res = await db.query('SELECT * FROM diagnosa_inap WHERE id_kunjungan = $1', [id_kunjungan]);
       return res.rows[0];
     },
     semuaTindakanInap: async () => {
