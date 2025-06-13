@@ -12,7 +12,7 @@ RUN npm install
 COPY . .
 
 # Ekspose port yang digunakan (default: 4000)
-EXPOSE 4000
+EXPOSE 8003
 
 # Jalankan aplikasi
 CMD ["node", "rawat_inap.js"]

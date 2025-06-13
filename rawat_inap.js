@@ -4,6 +4,9 @@ const { ApolloServer } = require('apollo-server-express');
 const schema = require('./schema');     // typeDefs
 const resolvers = require('./resolvers');
 
+require('dotenv').config(); 
+const PORT = process.env.PORT || 8003;
+
 async function startServer() {
   const app = express();
   app.use(cors());

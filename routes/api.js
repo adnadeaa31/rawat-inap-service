@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 const db = require('../db'); // Pastikan path sesuai ke db.js kamu
 const router = express.Router();
 
-const GRAPHQL_ENDPOINT = 'http://localhost:4000/graphql'; // sesuaikan
+const GRAPHQL_ENDPOINT = 'http://localhost:8003/graphql'; // sesuaikan
 
 // Helper untuk kirim query ke GraphQL
 async function fetchGraphQL(query, variables = {}) {
