@@ -55,6 +55,22 @@ const resolvers = {
       const res = await db.query('SELECT * FROM tindakan_inap WHERE id_tindakan_inap = $1', [id]);
       return res.rows[0];
     },
+     rawatInapByKunjungan: async (_, { id_kunjungan }) => {
+      const resRawat = await db.query('SELECT * FROM rawat_inap WHERE id_kunjungan = $1 LIMIT 1', [id_kunjungan]);
+      const rawat = resRawat.rows[0];
+
+      if (!rawat) return null;
+
+      const resDiagnosa = await db.query(
+        'SELECT * FROM diagnosa_inap WHERE id_rawat_inap = $1 LIMIT 1',
+        [rawat.id_rawat_inap]
+      );
+
+      return {
+        ...rawat,
+        diagnosa: resDiagnosa.rows[0] || null, // return satu diagnosa saja
+      };
+    }
   },
 
   RawatInap: {

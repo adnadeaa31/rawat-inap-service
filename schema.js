@@ -57,6 +57,8 @@ const typeDefs = gql`
 
     semuaTindakanInap: [TindakanInap]
     tindakanInap(id: ID!): TindakanInap
+
+     rawatInapByKunjungan(id_kunjungan: Int!): RawatInap
   }
 
   type Mutation {
